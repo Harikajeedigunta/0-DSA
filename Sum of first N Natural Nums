@@ -1,0 +1,78 @@
+Python Code:
+
+Method 1 : Using for Loop
+In this method we’ll add all the natural numbers until the given integer input using for loop in Python.
+
+Python Code
+num = 5
+sum = 0
+for i in range(num+1):
+  sum+=i
+print(sum)
+Output:
+15
+
+Method 2 : Using Formula for the Sum of Nth Term
+In this Method we use the formula for finding the sum of N term.
+
+Formula to Find the Sum of N terms
+Sum = ( Num * ( Num + 1 ) ) / 2
+Python Code
+num = 5
+print(int(num*(num+1)/2))
+Output
+15
+
+CPP Code:
+
+Method 1 : Using for Loop
+In this method we’ll add all the natural numbers until the given integer input using for loop in C++.
+
+C++ Code
+
+#include<bits/stdc++.h> 
+using namespace std;
+
+int main()
+{
+    int n;
+    cout << "Enter a number : "; 
+    cin >> n;
+    
+    int sum=0;
+    
+    for(int i=1;i<=n;i++) 
+        sum+=i;
+
+    cout << sum;
+
+    return 0;
+}
+Output
+Enter a number : 10
+55
+
+Method 2 : Using Formula for the Sum of Nth Term
+In this Method we use the formula for finding the sum of N term.
+
+Formula to Find the Sum of N terms
+Sum = ( Num * ( Num + 1 ) ) / 2
+C++ Code
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    
+    cout << "Enter a number : "; 
+    cin >> n;
+    
+    cout << n*(n+1)/2;
+    
+    return 0;
+}
+Output
+Enter a number : 10
+55
