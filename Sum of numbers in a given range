@@ -1,0 +1,46 @@
+Python Code
+Method 1:
+
+n1=int(input())
+n2=int(input())
+sum=0
+for i in range(n1,n2+1):
+    sum+=i
+print(sum) #n1=3,n2=6
+output:18
+
+Method 2:
+n1=int(input())
+n2=int(input())
+sum=(n2*(n2+1)//2)-(n1*(n1+1)//2)+n1
+print(sum)  #n1=3,n2=6
+output:18
+
+CPP Code:
+
+Method 1:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n1,n2,sum=0;
+    cin>>n1>>n2;
+    for(int i=n1;i<=n2;i++)
+    {
+        sum+=i;
+    }
+    cout<<sum; #n1=3,n2=6
+}
+output:18
+
+Method 2:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n1,n2,sum=0;
+    cin>>n1>>n2;
+    sum=(n2*(n2+1)/2)-(n1*(n1+1)/2)+n1;
+    cout<<sum; #n1=3,n2=6
+}
+output:18
