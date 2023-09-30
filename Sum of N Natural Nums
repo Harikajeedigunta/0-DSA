@@ -1,0 +1,41 @@
+Python Code:
+
+Method 1: Using for Loop
+number,sum = 6,0
+for i in range(number+1):
+  sum+=i
+print(sum)
+Output:
+21
+
+number = 6
+sum = int((number * (number + 1))/2)
+print(sum)
+Output:
+21
+
+CPP Code:
+
+Method 1:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n=6,sum=0;
+    for(int i=1;i<=n;i++)
+    {
+        sum+=i;
+    }
+    cout<<sum;
+}
+output:21
+
+Method 2:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n=6,sum=0;
+    cout<<n*(n+1)/2;
+}
+output:21
