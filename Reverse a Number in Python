@@ -1,0 +1,46 @@
+Python code:
+Method 1: Using Simple Iteration
+n=int(input())
+temp=n
+rev=0
+while(n>0):
+    rem=n%10
+    rev=rev*10+rem
+    n=n//10
+print(rev)
+output:
+123
+321
+
+Method 2: Using String Slicing
+n=int(input())
+print(str(n)[::-1])
+output:
+123
+321
+
+CPP Code:
+#include<iostream>
+using namespace std;
+int main()
+{
+  int num,rev=0;
+  cin>>num;
+  int temp=num;
+  while(num>0)
+  {
+    int rem=num%10;
+    rev=rev*10+rem;
+    num=num/10;
+    
+  }
+  cout<<rev;
+}
+output:
+123
+321
+
+
+
+    
+
