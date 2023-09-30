@@ -1,0 +1,43 @@
+Python Code:
+Method 0: Using String Character Extraction
+n=input()
+sum=0
+for i in n:
+    sum=sum+int(i)
+print(sum)
+output:
+23-->2+3
+5
+Method 1: Using Brute Force
+n=int(input())
+sum=0
+while(n!=0):
+    d=n%10
+    sum+=d
+    n=n//10
+print(sum)
+output:
+23-->2+3
+5
+
+Cpp Code:
+Method 1
+#include<iostream>
+using namespace std;
+int main()
+{
+  int n,sum=0;
+  cin>>n;
+  while(n!=0)
+  {
+    int d=n%10;
+    sum+=d;
+    n=n/10;
+  }
+  cout<<sum;
+}
+output:
+23-->2+3
+5
+
+
