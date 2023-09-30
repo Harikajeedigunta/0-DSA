@@ -1,0 +1,124 @@
+Python Code:
+
+Method 1: Using Brute Force
+This method uses Brute Force to check whether a given integer is Positive or Negative.
+
+Python Code
+Run
+num = 15
+if num > 0:
+    print('Positive')
+elif num < 0:
+    print('Negative')
+else:
+    print('Zero')
+Output:
+Positive
+
+Method 2: Using Nested if-else Statements
+This method uses a nested if-else Statements to check whether a given number is Positive or Negative.
+
+Python Code
+Run
+num = 15
+if num>=0:
+    if num==0:
+        print('Zero')
+    else:
+        print("Positive")
+else:
+    print("Negative")
+Output:
+Positive
+
+Method 3: Using Ternary Operator
+This method uses a ternary operator to check whether a number is Positive or Negative.
+
+Ternary Operator Syntax:
+( Condition ) ? ( if True : Action) : ( if False : Action) ;
+Python Code
+Run
+num =15
+print("Positive" if num>=0 else "Negative")
+Output
+Positive
+
+Method 1: Using Brute Force
+This method uses Brute Force to check whether a given integer is Positive or Negative.
+
+C++ Code
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num = 96;
+    
+    //Conditions to check if the number is negative or positive
+    if (num > 0)
+         cout << "The number is positive";
+    else if (num < 0)
+        cout << "The number is negative";
+    else
+        cout << "Zero";
+    
+    return 0;
+}
+Output
+Enter a number: 96
+The number is Positive
+
+Method 2: Using Nested if-else Statements
+This method uses a nested if-else Statements to check whether a given number is Positive or Negative.
+
+C++ Code
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int num = -12;
+    
+    //Condition to check if the number is negative or positive
+    if (num >= 0)
+    {
+        if (num == 0)
+            cout << "Zero";
+        else
+            cout << "The number is positive";
+    }
+    else
+            cout << "The number is negative";
+    
+    return 0;
+}
+Output
+Enter a number: -12
+The number is Negative
+
+Method 3: Using Ternary Operator
+This method uses a ternary operator to check whether a number is Positive or Negative.
+
+Ternary Operator Syntax
+( Condition ) ? ( if True : Action) : ( if False : Action) ;
+C++ Code
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num = -15;
+    
+    //Condition to check if the 0, positive or negative
+    
+    if(num == 0)
+            cout << "Zero"; else (num > 0) ? cout << "Positive": cout << "Negative";
+    
+    return 0;
+}
+Output
+Enter a number: -15
+Negative
