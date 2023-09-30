@@ -1,0 +1,206 @@
+Python Code:
+Method 1: Simple iterative solution
+n=int(input())
+flag=0
+for i in range(2,num):
+    if n%i==0:
+        flag=1
+        break
+if flag==1:
+    print("NOt prime")
+else:
+    print("Prime")
+output:
+3-->prime
+6-->Not prime
+
+Method 2: Optimization by break condition
+n=int(input())
+flag=0
+if n<2:
+    flag=1
+for i in range(2,n):
+    if n%i==0:
+        flag=1
+        break
+if(flag==1):
+    print("Not Prime")
+else:
+    print("Prime")
+output:
+3-->prime
+6-->Not prime
+
+Method 3: Optimization by n/2 iterations
+n=int(input())
+flag=0
+if n<2:
+    flag=1
+for i in range(2,int((n/2)+1)):
+    if n%i==0:
+        flag=1
+        break
+if(flag==1):
+    print("Not Prime")
+else:
+    print("Prime")
+output:
+3-->prime
+6-->Not prime
+
+Method 4: Optimization by √n
+from math import sqrt
+n=int(input())
+flag=0
+if(n<2):
+    flag=1
+for i in range(2,int(sqrt(n))+1):
+    if n%i==0:
+        flag=1
+        break
+if flag==1:
+    print("Not Prime")
+else:
+    print("Prime")
+output:
+3-->prime
+6-->Not prime
+
+CPP Code:
+
+Method 1: Simple iterative solution
+#include<iostream>
+using namespace std;
+int main()
+{
+  int n,count=0;
+  cin>>n;
+  for(int i=2;i<n;i++)
+  {
+    if(n%i==0)
+    {
+      count=1;
+      break;
+    }
+  }
+  if(count==1)
+  {
+    cout<<"Not Prime";
+  }
+  else
+  {
+    cout<<"Prime";
+  }
+  
+}
+output:
+3-->prime
+6-->Not prime
+
+Method 2: Optimization by break condition
+#include<iostream>
+using namespace std;
+int main()
+{
+  int n,count=0;
+  cin>>n;
+  if(n<2)
+  {
+    count=1;
+  }
+  for(int i=2;i<n;i++)
+  {
+    if(n%i==0)
+    {
+      count=1;
+      break;
+    }
+  }
+  if(count==1)
+  {
+    cout<<"Not Prime";
+  }
+  else
+  {
+    cout<<"Prime";
+  }
+  
+}
+output:
+3-->prime
+6-->Not prime
+
+Method 3: Optimization by n/2 iterations
+#include<iostream>
+using namespace std;
+int main()
+{
+  int n,count=0;
+  cin>>n;
+  if(n<2)
+  {
+    count=1;
+  }
+  for(int i=2;i<n/2;i++)
+  {
+    if(n%i==0)
+    {
+      count=1;
+      break;
+    }
+  }
+  if(count==1)
+  {
+    cout<<"Not Prime";
+  }
+  else
+  {
+    cout<<"Prime";
+  }
+  
+}
+output:
+3-->prime
+6-->Not prime
+
+Method 4: Optimization by √n
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+  int n,count=0;
+  cin>>n;
+  if(n<2)
+  {
+    count=1;
+  }
+  for(int i=2;i<sqrt(n);i++)
+  {
+    if(n%i==0)
+    {
+      count=1;
+      break;
+    }
+  }
+  if(count==1)
+  {
+    cout<<"Not Prime";
+  }
+  else
+  {
+    cout<<"Prime";
+  }
+  
+}
+output:
+3-->prime
+6-->Not prime
+
+
+
+
+
+
+
+
