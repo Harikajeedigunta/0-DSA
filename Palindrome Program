@@ -1,0 +1,138 @@
+Python Code:
+Method 1:  Using Simple Iteration.
+n=int(input())
+temp=n
+rev=0
+while(temp!=0):
+    rem=temp%10
+    rev=rev*10+rem
+    temp=temp//10
+if(n==rev):
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+Output:
+121-->Palindrome
+122-->Not Palindrome
+
+Method 2: Using String Slicing
+n=input()
+rev=str(n[::-1])
+if(n==rev):
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+Output:
+121-->Palindrome
+122-->Not Palindrome
+
+Method 3: Using In-Built reversed function
+def isPalindrome(str):
+    reverse=''.join(reversed(str))
+    if(str==reverse):
+        return True
+    else:
+        return False
+h=input()
+if(isPalindrome(h)):
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+Output:
+121-->Palindrome
+122-->Not Palindrome
+
+Method 4: Building reverse one char at a time
+k=input()
+rev=''
+for char in k:
+    rev=char+rev
+if(k==rev):
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+Output:
+121-->Palindrome
+122-->Not Palindrome
+
+CPP Code:
+Method 1: Mathematical approach
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,temp,rem,rev=0;
+    cin>>n;
+    temp=n;
+    while(n!=0)
+    {
+        rem=n%10;
+        rev=rev*10+rem;
+        n=n/10;
+    }
+    if(temp==rev)
+    {
+        cout<<"Palindrome";
+    }
+    else
+    {
+        cout<<"Not Palindrome";
+    }
+}
+Output:
+121-->Palindrome
+122-->Not Palindrome
+
+Method 2: Using the Inbuilt reverse() Function in the STL
+#include<bits/stdc++.h>
+using namespace std;
+string isPalindrome(string S)
+{
+   string P=S;
+   reverse(P.begin(),P.end());
+   if(S==P)
+   return "YES";
+   else
+   return "No";
+}
+int main()
+{
+    string S;
+    cin>>S;
+    cout<<isPalindrome(S);
+}
+Output:
+121-->Palindrome
+122-->Not Palindrome
+
+Method 3: By Traversing the String
+#include<bits/stdc++.h>
+using namespace std;
+string isPalindrome(string S)
+{
+    for(int i=0;i<S.length()/2;i++)
+    {
+        if(S[i]!=S[S.length()-i-1])
+        {
+            return "NO";
+        }
+        
+    }
+     return "Yes";
+}
+int main()
+{
+    string S;
+    cin>>S;
+    cout<<isPalindrome(S);
+}
+Output:
+121-->Palindrome
+122-->Not Palindrome
+
+
+
+
+
+
+
