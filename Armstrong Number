@@ -1,0 +1,82 @@
+Python Code:
+Method 1: Python program to check if a number is an Armstrong number without using the power function
+n=int(input())
+num=n
+s=len(str(n))
+sum=0
+while(n!=0):
+    k=int(n%10)
+    sum=sum+(k**s)
+    n=n//10
+if(num==sum):
+    print("Armstrong")
+else:
+    print("Not Armstrong")
+Output:
+153
+Armstronng 
+120 
+Not Armstrong
+
+
+Method 2: Using Power function
+n=int(input())
+num=n
+s=len(str(n))
+digit,sum=0,0
+for i in range(s):
+    digit=int(n%10)
+    n=n//10
+    sum+=pow(digit,s)
+if(sum==num):
+    print("Armstrong")
+else:
+    print("Not Armstrong")
+Output:
+153
+Armstronng 
+120 
+Not Armstrong
+
+Method 3:Python program to check if a number is an Armstrong number Using string manipulation
+def is_armstrong(num):
+    num_str=str(num)
+    n=len(num_str)
+    sum=0
+    for digit in num_str:
+        sum+=int(digit)**n
+    if(num==sum):
+        return True
+    else:
+        return False
+num=int(input())
+print(is_armstrong(num))
+Output:153
+True
+120 False
+
+CPP Code:
+Method 1:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n; 
+    int temp=n;
+    int sum=0;
+    while(n>0)
+    {
+        int rem=n%10;
+        sum=sum+(rem*rem*rem);
+        n=n/10;
+    }
+    if(temp==sum)
+    cout<<"Yes";
+    else
+    cout<<"No";
+}
+Output:
+153True
+120 False
+
