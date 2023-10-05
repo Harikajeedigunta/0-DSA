@@ -1,0 +1,40 @@
+Python code:
+m,n=map(int,input().split())
+for i in range(m,n):
+    k=len(str(i))
+    temp=i
+    sum=0
+    while(temp>0):
+        h=temp%10
+        sum+=h**k
+        temp=temp//10
+    if(i==sum):
+        print(i,end=" ")
+Output:
+150 10000
+153 370 371 407 1634 8208 9474 
+
+CPP Code
+#include<iostream>
+using namespace std;
+int main()
+{
+    int m,n;
+    cin>>m>>n;
+    for(int i=m;i<n;i++)
+    {
+        int temp=i;
+        int sum=0;
+        while(temp>0)
+        {
+            int k=temp%10;
+            sum=sum+(k*k*k);
+            temp=temp/10;
+        }
+        if(i==sum)
+        cout<<i<<" ";
+    }
+}
+Output:
+100 400
+153 370 371 
