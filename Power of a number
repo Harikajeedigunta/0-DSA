@@ -1,0 +1,23 @@
+Python Code:
+Method 1: Using pow() Function
+n,k=map(int,input().split())
+print(pow(n,k))
+Output
+3 2--->9
+
+Method 2: Using Simple Iteration
+n,k=map(int,input().split())
+h=1
+for i in range(k):
+    h*=n
+print(h)
+Output
+3 2--->9
+
+Method 3: Using Python Operator
+n,k=map(int,input().split())
+print(n**k)
+Output
+3 2--->9
+
+
