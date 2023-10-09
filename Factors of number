@@ -1,0 +1,39 @@
+Python Code:
+Method 1:
+n=int(input())
+l=[]
+for i in range(1,n+1):
+    if(n%i==0):
+        l.append(i)
+print(l)
+Output:
+100
+[1, 2, 4, 5, 10, 20, 25, 50, 100]
+
+Method 2: Using [1, number] as the Range
+def printfactors(n):
+    i=1
+    while i<=n:
+        if(n%i==0):
+            print(i,end=" ")
+        i=i+1
+n=int(input())
+printfactors(n)
+Output:
+100
+[1, 2, 4, 5, 10, 20, 25, 50, 100]
+
+Method 3: Using [1, sqrt(number)]
+from math import sqrt
+n=int(input())
+l=[]
+for i in range(1,int(sqrt(n))+1):
+    if(n%i==0):
+        l.append(i)
+    i=i+1
+print(l)
+Output:
+100
+[1, 2, 4, 5, 10]
+
+
