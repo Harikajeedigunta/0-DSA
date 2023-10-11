@@ -1,0 +1,72 @@
+Python Code:
+Method 1:
+def automorphic_number(n):
+    if n<0:
+        n=-n
+    sq=n*n
+    while(n>0):
+        if(n%10!=sq%10):
+            return False
+        n=n//10
+        sq=sq//10
+    return True
+n=int(input())
+if(automorphic_number(n)):
+    print("automorphic")
+else:
+    print("Not automorphic")
+Output:
+5
+automorphic
+CPP Code
+Method 1:Using Modulo Operators
+number = 376
+square = pow(number, 2)
+mod = pow(10, len(str(number)))
+if square % mod == number:
+    print("It's an Automorphic Number")
+else:
+    print("It's not an Automorphic Number")
+Output:
+5
+automorphic
+
+
+#include <iostream>
+using namespace std;
+
+int isAutomorphic(int n){
+    
+    int square = n * n;
+    
+    while(n != 0)
+    {
+        // means not automorphic number
+        if(n % 10 != square % 10){
+            return 0;
+        }
+        
+        // reduce down numbers
+        n /= 10;
+        square /= 10;
+    }
+    // if reaches here means automorphic number
+    return 1;
+}
+
+int main ()
+{
+    int n = 376, sq = n * n ;
+    
+    if(isAutomorphic(n))
+        cout << "Num: "<< n << ", Square: " << sq << " - is Automorphic";
+    else
+        cout << "Num: "<< n << ", Square: " << sq << " - is not Automorphic";
+    
+
+}
+// Time complexity: O(N)
+// Space complexity: O(1)
+Output
+Num: 376, Square: 141376 - is Automorphic
+
