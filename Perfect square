@@ -1,0 +1,144 @@
+Python Code:
+Method 1:
+n=int(input())
+for i in range(n):
+    if i*i==n:
+        print("Yes")
+        break
+else:
+    print("No")
+Output:
+49   56
+Yes  N0
+
+Method 2:
+def perfect_square(n):
+    i=1
+    while(i*i<=n):
+        if i*i==n:
+            return True
+        i+=1
+    return False
+n=int(input())
+print(perfect_square(n))
+Output:
+49   56
+Yes  N0
+
+Method 3:
+from math import sqrt
+def perfect_square(n):
+    if(n>=0):
+        sr=int(sqrt(n))
+        if(sr*sr==n):
+            return True
+    return False
+n=int(input())
+if(perfect_square(n)):
+    print("Yes")
+else:
+    print("NO")
+Output:
+49   56
+Yes  N0
+
+Method 4:
+import math
+def perfect_square(n):
+    if(math.ceil(math.sqrt(n))==math.floor(math.sqrt(n))):
+        print('perfect Square')
+    else:
+        print('Not Perfect Square')
+n=int(input())
+perfect_square(n)
+Output:
+49   56
+Yes  N0
+Eg. ceil(8.6)=9
+Eg. floor(8.6)=8
+
+CPP Code:
+Method 1:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int flag=0;
+    for(int i=1;i<=n;i++)
+    {
+        if(i*i==n)
+        {
+           flag=1;
+           break;
+        }
+        if(i*i>n)
+        {
+            break;
+        }
+    }
+    if(flag)
+    cout<<"Yes";
+    else
+    cout<<"No";
+}
+Output:
+49   56
+Yes  N0
+
+Method 2:
+#include<iostream>
+#include<math.h>
+using namespace std;
+bool isPerfectSquare(long double x)
+{
+    if(x>=0)
+    {
+        long long sr=sqrt(x);
+        if(sr*sr==x)
+        return true;
+    }
+    return false;
+}
+int main()
+{
+    long long x;
+    cin>>x;
+    if(isPerfectSquare(x))
+    {
+        cout<<"Yes";
+    }
+    else
+    {
+        cout<<"No";
+    }
+}
+Output:
+49   56
+Yes  N0
+
+Method 3:
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    if(ceil((double)sqrt(n))==floor((double)sqrt(n)))
+    {
+        cout<<"Perfect Square";
+    }
+    else
+    {
+        cout<<"Not Square";
+    }
+}
+Output:
+49   56
+Yes  N0
+
+
+
+
