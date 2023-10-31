@@ -1,0 +1,91 @@
+Python code:
+Method 1 : Linear Quest
+n1=int(input())
+n2=int(input())
+hcf=1
+for i in range(1,min(n1,n2)):
+    if(n1%i==0 and n2%i==0):
+        hcf=i
+print(hcf)
+Output:
+36
+60
+12
+
+Method 2 : Repeated Subtraction
+Algorithm
+n1=int(input())
+n2=int(input())
+while(n1!=n2):
+    if(n1>n2):
+        n1-=n2
+    else:
+        n2-=n1
+print(min(n1,n2))
+Output:
+36
+60
+12
+
+Method 3:
+def hcf(num1,num2):
+    while(num1!=num2):
+        if(num1>num2):
+            num1-=num2
+        else:
+            num2-=num1
+    return min(num1,num2)
+num1,num2=map(int,input().split())
+print(hcf(num1,num2))
+Output:
+36
+60
+12
+
+Cpp Code:
+Method 1: Linear Quest to find HCF
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n1,n2,hcf=1;
+    cin>>n1>>n2;
+    for(int i=1;i<min(n1,n2);i++)
+    {
+        if(n1%i==0 and n2%i==0)
+        {
+            hcf=i;
+        }
+    }
+    cout<<hcf;
+    
+}
+Output:
+60 72
+12
+
+Method 2: Euclidean Algorithm: Repeated Subtraction
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n1,n2;
+    cin>>n1>>n2;
+    while(n1!=n2)
+    {
+        if(n1>n2)
+        {
+            n1=n1-n2;
+        }
+        else
+        {
+            n2=n2-n1;
+        }
+    }
+    cout<<min(n1,n2);
+}
+Output:
+60 72
+12
+
+
