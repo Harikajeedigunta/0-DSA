@@ -1,0 +1,129 @@
+Method 1: A linear way to calculate LCM
+n1=int(input())
+n2=int(input())
+for i in range(max(n1,n2),1*(n1*n2)):
+    if(i%n1==0 and i%n2==0):
+        lcm=i
+        break
+print(lcm)
+Output:
+12
+14
+84
+
+Method 2:NumPy LCM Lowest Common Multiple
+import numpy as np
+n1=12
+n2=14
+x=np.lcm(n1,n1)
+print(x)
+Output:12
+
+Method 3:
+n1=int(input())
+n2=int(input())
+hcf=1
+for i in range(1,max(n1,n2)):
+    if(n1%i==0 and n2%i==0):
+        hcf=i
+lcm=(n1*n2)//hcf
+print(lcm)
+12
+14
+84
+
+Method 4: Repeated subtraction to calculate HCF and determine LCM
+def getHcf(n1,n2):
+    while(n1!=n2):
+        if(n1>n2):
+            n1-=n2
+        else:
+            n2-=n1
+    return max(n1,n2)
+n1,n2=map(int,input().split())
+hcf=getHcf(n1,n2)
+lcm=(n1*n2)//hcf
+print(lcm)
+Output:
+12 14
+84
+
+CPP Code:
+Method 1: A linear way to calculate LCM
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n1,n2,lcm;
+    cin>>n1>>n2;
+    for(int i=max(n1,n2);i<1*(n1*n2);i++)
+    {
+        if(i%n1==0 and i%n2==0)
+        {
+            lcm=i;
+            break;
+        }
+    }
+    cout<<lcm;
+}
+Output:
+12 14
+84
+
+Method 2:
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n1,n2,hcf=1,lcm;
+    cin>>n1>>n2;
+    for(int i=1;i<max(n1,n2);i++)
+    {
+        if(n1%i==0 and n2%i==0)
+        {
+            hcf=i;
+        }
+    }
+    lcm=(n1*n2)/hcf;
+    cout<<lcm;
+    
+}
+Output:
+4 6
+12
+
+Method 3:
+#include<bits/stdc++.h>
+using namespace std;
+int getHcf(int n1,int n2)
+{
+    while(n1!=n2)
+    {
+        if(n1>n2)
+        {
+            n1-=n2;
+        }
+        else
+        {
+            n2-=n1;
+        }
+    }
+    return max(n1,n2);
+}
+int main()
+{
+    int n1,n2;
+    cin>>n1>>n2;
+    int hcf=getHcf(n1,n2);
+    int lcm=(n1*n2)/hcf;
+    cout<<lcm;
+}
+Output:
+12 14
+84
+
+
+
+
+    
+
