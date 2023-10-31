@@ -1,0 +1,23 @@
+Python Code:
+n=int(input())
+hand_shakes=(n*(n-1))//2
+print(hand_shakes)
+Output:
+8
+28
+
+CPP Code:
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int Hand_shakes=n*(n-1)/2;
+    cout<<Hand_shakes;
+    return 0;
+}
+Output:
+8
+28
+
