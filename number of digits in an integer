@@ -1,0 +1,79 @@
+Python Code:
+Method 1 : Using loop
+n=int(input())
+count=0
+while(n!=0):
+    n=n//10
+    count+=1
+print(count)
+Output:
+12345
+5
+
+Method 2:
+def count(n):
+    count=0
+    while(n!=0):
+        n=n//10
+        count+=1
+    return count
+n=int(input())
+print(count(n))
+Output:
+12345
+5
+
+Method 3 : Using formulae.
+import math
+n=int(input())
+count=math.floor(math.log10(n)+1)
+print(count)
+Output:
+12345
+5
+
+CPP Code:
+Method 1:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,count=0;
+    cin>>n;
+    while(n!=0)
+    {
+        n=n/10;
+        count+=1;
+    }
+    cout<<count;
+    
+}
+Output:
+123
+3
+
+Method 2:
+#include<iostream>
+using namespace std;
+int getcount(int n)
+{
+   int count=0;
+    while(n!=0)
+    {
+        n=n/10;
+        count=count+1;
+    }
+    return count;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int k=getcount(n);
+    cout<<k;
+}
+Output:
+123456
+6
+
+
