@@ -1,0 +1,27 @@
+Python code:
+Method 1:Algorithmic way (Binary to Decimal)
+n=int(input())
+decimal_num=0
+binary_num=n
+base=1
+while(n>0):
+    rem=n%10
+    decimal_num=decimal_num+rem*base
+    n=n//10
+    base=base*2
+print(decimal_num)
+Output:
+1010
+10
+
+Method 2:Inbuilt Method (Binary to Decimal)
+def binary(n):
+    x=bin(n)[2:]
+    y=int(x, 2)
+    return x,y
+n=int(input())
+print(binary(n))
+Output:
+15
+('1111', 15)
+
