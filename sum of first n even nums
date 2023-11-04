@@ -1,0 +1,131 @@
+Python code:
+Method 1:
+n=int(input())
+sum=0
+curr=2
+i=0
+while(i<n):
+    sum=sum+curr
+    curr=curr+2
+    i=i+1
+print(sum)
+Output:
+10
+110
+
+Method 2:
+def even_sum(n):
+    sum=0
+    curr=2
+    i=0
+    while(i<n):
+        sum=sum+curr
+        curr=curr+2
+        i=i+1
+    return sum
+n=int(input())
+print(even_sum(n))
+Output:
+10
+110
+
+Method 3:Using formula
+n=int(input())
+even_sum=n*(n+1)
+print(even_sum)
+Output:
+10
+110
+
+Method 4:
+def even_sum(n):
+    sum=n*(n+1)
+    return sum
+n=int(input())
+print(even_sum(n))
+Output:
+10
+110
+
+Cpp code:
+Method 1:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int sum=0,curr=2;
+    for(int i=0;i<n;i++)
+    {
+        sum=sum+curr;
+        curr=curr+2;
+    }
+    cout<<sum;
+}
+Output:
+10
+110
+
+
+Method 2:
+#include<iostream>
+using namespace std;
+int even_sum(int n)
+{
+    int sum=0;
+    int curr=2;
+    for(int i=0;i<n;i++)
+    {
+        sum=sum+curr;
+        curr=curr+2;
+    }
+    return sum;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int k=even_sum(n);
+    cout<<k;
+}
+Output:
+10
+110
+
+Method 3:Using formula
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int sum=n*(n+1);
+    cout<<sum;
+}
+Output:
+10
+110
+
+Method 4:
+#include<iostream>
+using namespace std;
+int geteven_sum(int n)
+{
+    int sum=n*(n+1);
+    return sum;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int k=geteven_sum(n);
+    cout<<k;
+}
+Output:
+10
+110
+
+
+
+
