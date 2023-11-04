@@ -1,0 +1,131 @@
+Python code:
+Method 1:
+n=int(input())
+sum=0
+curr=1
+i=0
+while(i<n):
+    sum=sum+curr
+    curr=curr+2
+    i=i+1
+print(sum)
+Output:
+5
+25
+
+Method 2:
+def odd_sum(n):
+    sum=0
+    curr=1
+    i=0
+    while(i<n):
+        sum=sum+curr
+        curr=curr+2
+        i=i+1
+    return sum
+n=int(input())
+print(odd_sum(n))
+Output:
+5
+25
+
+Method 3:Using formula
+n=int(input())
+odd_sum=n*n
+print(odd_sum)
+Output:
+10
+100
+
+Method 4:
+def odd_sum(n):
+    sum=n*n
+    return sum
+n=int(input())
+print(odd_sum(n))
+Output:
+10
+100
+
+CPP Code:
+Method 1:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int sum=0,curr=1;
+    for(int i=0;i<n;i++)
+    {
+        sum=sum+curr;
+        curr=curr+2;
+    }
+    cout<<sum;
+}
+Output:
+10
+100
+
+Method 2:
+#include<iostream>
+using namespace std;
+int getodd_sum(int n)
+{
+    int sum=0;
+    int curr=1;
+    for(int i=0;i<n;i++)
+    {
+        sum=sum+curr;
+        curr=curr+2;
+    }
+    return sum;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int k=getodd_sum(n);
+    cout<<k;
+}
+Output:
+10
+100
+
+Method 3:Using formula
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int sum=n*(n);
+    cout<<sum;
+}
+Output:
+5
+25
+
+Method 4:
+#include<iostream>
+using namespace std;
+int getodd_sum(int n)
+{
+    int sum=n*(n);
+    return sum;
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int k=getodd_sum(n);
+    cout<<k;
+}
+Output:
+100
+10000
+
+
+
+
+
