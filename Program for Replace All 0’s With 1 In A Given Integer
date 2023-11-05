@@ -1,0 +1,97 @@
+Python code:
+Method 1:Using loops
+num=int(input())
+num2=0
+if(num==0):
+    num2=1
+while(num>0):
+    rem=num%10
+    if(rem==0):
+        rem=1
+    num=num//10
+    num2=num2*10+rem
+num=0
+while(num2>0):
+    r=num2%10
+    num=num*10+r
+    num2=num2//10
+print(num)
+Output:
+200300401
+211311411
+
+Method 2:By using string
+n=int(input())
+n=str(n)
+n=list(n)
+r=""
+for i in range(len(n)):
+    if(n[i]=='0'):
+        n[i]='1'
+    r=r+n[i]
+del n
+print(int(r))
+Output:
+102030
+112131
+
+Method 3:
+n=int(input())
+s=str(n)
+l=[]
+for i in s:
+    if(i=='0'):
+        l.append('1')
+    else:
+        l.append(i)
+k=""
+for i in l:
+    k+=i
+print(int(k))
+Output:
+102030
+112131
+
+Method 4:By using replace function
+n=int(input())
+s=str(n)
+x=s.replace('0','1')
+print(x)
+Output:
+102030
+112131
+
+CPP code:
+Method 1:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,n2=0;
+    cin>>n;
+    if(n==0)
+    {
+        n2=1;
+    }
+    while(n>0)
+    {
+        int rem=n%10;
+        if(rem==0)
+        {
+            rem=1;
+        }
+        n=n/10;
+        n2=n2*10+rem;
+    }
+    n=0;
+    while(n2>0)
+    {
+        int r=n2%10;
+        n=n*10+r;
+        n2=n2/10;
+    }
+    cout<<n;
+}
+Output:
+20003000
+21113111
