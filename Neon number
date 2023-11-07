@@ -1,0 +1,91 @@
+Python code:
+n=int(input())
+sq=n*n
+sum=0
+while(sq>0):
+    rem=sq%10
+    sum+=rem
+    sq=sq//10
+if(sum==n):
+    print("Yes")
+else:
+    print("NO")
+Output:
+9
+Yes
+
+Neon number in range:
+n1=int(input())
+n2=int(input())
+for i in range(n1,n2+1):
+    sq=i*i
+    sum=0
+    while(sq>0):
+        rem=sq%10
+        sum+=rem
+        sq=sq//10
+    if(sum==i):
+        print(i,end=" ")
+Output:
+5
+9000
+9
+
+CPP code:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int sq=n*n;
+    int sum=0;
+    while(sq>0)
+    {
+        int rem=sq%10;
+        sum=sum+rem;
+        sq=sq/10;
+    }
+    if(sum==n)
+    {
+        cout<<"Yes";
+    }
+    else
+    {
+        cout<<"No";
+    }
+}
+Output:
+9
+Yes
+
+Method 2:Neon number in range
+#include<iostream>
+#include<math.h>
+using namespace std;
+int getNeonnum(int n)
+{
+        int sq=n*n;
+        int sum=0,rem;
+        while(sq>0)
+        {
+            rem=sq%10;
+            sum+=rem;
+            sq=sq/10;
+        }
+        return(sum==n);
+}
+int main()
+{
+    int n1,n2;
+    cin>>n1>>n2;
+    for(int i=n1;i<=n2;i++)
+    {
+        if(getNeonnum(i))
+        cout<<i<<" ";
+    }
+}
+Output:
+5 9000
+9
+    
