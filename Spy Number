@@ -1,0 +1,96 @@
+Python code:
+Method 1:
+n=int(input())
+sum=0
+product=1
+while(n>0):
+    rem=n%10
+    sum+=rem
+    product*=rem
+    n=n//10
+if(sum==product):
+    print("Spy Number")
+else:
+    print("Not Spy Number")
+Output:
+123
+Spy Number
+
+Method 2:Spy nums in given range
+def spynum(n):
+    sum=0
+    product=1
+    while(n>0):
+        rem=n%10
+        sum+=rem
+        product*=rem
+        n=n//10
+    return(sum==product)
+n1=int(input())
+n2=int(input())
+for i in range(n1,n2+1):
+    if(spynum(i)):
+        print(i,end=" ")
+Output:
+5
+1000
+5 6 7 8 9 22 123 132 213 231 312 321 
+
+CPP code:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int sum=0,product=1;
+    while(n>0)
+    {
+        int rem=n%10;
+        sum+=rem;
+        product*=rem;
+        n=n/10;
+    }
+    if(sum==product)
+    {
+        cout<<"Spy Number";
+    }
+    else
+    {
+        cout<<"Not Spy Number";
+    }
+}
+Output:
+133
+Not Spy Number
+
+Method2:Spy nums in given range
+#include<iostream>
+using namespace std;
+int getSpynum(int n)
+{
+    int sum=0,product=1;
+    while(n>0)
+    {
+        int rem=n%10;
+        sum+=rem;
+        product*=rem;
+        n=n/10;
+    }
+    return(sum==product);
+}
+int main()
+{
+    int n1,n2;
+    cin>>n1>>n2;
+    for(int i=n1;i<=n2;i++)
+    {
+        if(getSpynum(i))
+        {
+            cout<<i<<" ";
+        }
+    }
+}
+Output:
+100 2000
+123 132 213 231 312 321 1124 1142 1214 1241 1412 1421 
