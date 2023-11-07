@@ -1,0 +1,64 @@
+Python code:
+Method 1:
+import math
+n=int(input())
+root=math.sqrt(n+1)
+if(int(root)==root):
+    print("Sunny Number")
+else:
+    print("Not Sunny Number")
+Output:
+48
+Sunny Number
+
+Method 2:
+import math
+n=int(input())
+root=math.sqrt(n+1)
+if(math.floor(root)==root):
+    print("Sunny Number")
+else:
+    print("Not Sunny Number")
+Output:
+30
+Not Sunny Number
+
+CPP Code:
+Method 1:
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    double root;
+    root=sqrt(n+1);
+    if(int(root)==root)
+    cout<<"Sunny Number";
+    else
+    cout<<"Not Sunny Number";
+    
+}
+Output:
+48
+Sunny Number
+
+Method 2:
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    double root;
+    root=sqrt(n+1);
+    if(floor(root)==root)
+    cout<<"Sunny Number";
+    else
+    cout<<"Not Sunny Number";
+    
+}
+30
+Not Sunny Number
