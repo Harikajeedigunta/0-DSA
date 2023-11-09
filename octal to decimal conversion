@@ -1,0 +1,95 @@
+Python code:
+Method 1 : Algorithmic Way
+n=int(input())
+octal_val=n
+decimal_val=0
+base=1
+while(n>0):
+    rem=n%10
+    decimal_val+=rem*base
+    n=n//10
+    base=base*8
+print(decimal_val)
+Output:
+2671
+1465
+
+Method 2:
+def octalToDecimal(n):
+    decimal_val=0
+    base=1
+    while(n>0):
+        rem=n%10
+        decimal_val+=rem*base
+        n=n//10
+        base=base*8
+    return decimal_val
+n=int(input())
+print(octalToDecimal(n))
+Output:
+347
+231
+
+Method 3 : Inbuilt Method
+By using inbuilt function int in Python we can convert any number with any base to decimal.
+octal_num=int(input())
+decimal_val=int(str(octal_num),8)
+print("decimal val of {} is {}".format(octal_num,decimal_val))
+Output:
+347
+decimal val of 347 is 231
+
+CPP Code:
+Method 1:Algorithm
+#include<iostream>
+#include<math.h>
+using namespace std;
+int get_decimal(long long n)
+{
+    int decimal_val=0,base=1;
+    while(n>0)
+    {
+        int rem=n%10;
+        decimal_val+=rem*base;
+        n=n/10;
+        base=base*8;
+    }
+    return decimal_val;
+}
+int main()
+{
+    long long octal;
+    cin>>octal;
+    int k=get_decimal(octal);
+    cout<<k;
+    return 0;
+}
+Output:
+347
+231
+
+Method 2:
+Methods used
+The following method uses inbuilt function stoi(), which has given template -
+stoi(binary_in_string_format, 0, base_value)
+
+#include<iostream>
+using namespace std;
+ 
+int main()
+{
+    // important input has to be in string format only here
+    string binaryNumber;
+    cin >> binaryNumber;
+    
+    int base = 8;
+    // format stoi(binary_in_string_format, 0, base_value)
+    cout << stoi(binaryNumber, 0, base);
+ 
+    return 0;
+}
+Output:
+462
+306
+
+
