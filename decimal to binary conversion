@@ -1,0 +1,51 @@
+Python code:
+Algorithm Method 1 :
+num=int(input())
+binary_arr=[]
+while(num!=0):
+    rem=num%2
+    binary_arr.append(rem)
+    num=num//2
+for j in reversed(binary_arr):
+    print(j,end="")
+Output:
+8
+1000
+
+Method 2:
+n=int(input())
+decimal_val=n
+binary_val=0
+base=1
+while(n>0):
+    rem=n%2
+    binary_val+=rem*base
+    n=n//2
+    base=base*10
+print(binary_val)
+Output:
+8
+1000
+
+CPP Code:
+Method 1:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    long long binary_val;
+    int base=1;
+    while(n>0)
+    {
+        int rem=n%2;
+        binary_val+=rem*base;
+        n=n/2;
+        base=base*10;
+    }
+    cout<<binary_val;
+}
+Output:
+15
+1111
