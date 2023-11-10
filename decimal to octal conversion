@@ -1,0 +1,65 @@
+Python code:
+Method 1:
+n=int(input())
+decima_num=n
+octal_num=0
+base=1
+while(n>0):
+    rem=n%8
+    octal_num+=rem*base
+    n=n//8
+    base=base*10
+print(octal_num)
+Output:
+231
+347
+
+Method 2:
+n=int(input())
+k=[]
+while(n>0):
+    rem=n%8
+    k.append(rem)
+    n=n//8
+for i in reversed(k):
+    print(i,end="")
+Output:
+231
+347
+
+Method 3:
+def decimalToOctal(n):
+    l=[]
+    while(n>0):
+        rem=n%8
+        l.append(rem)
+        n=n//8
+    for i in reversed(l):
+        print(i,end="")
+n=int(input())
+decimalToOctal(n)
+Output:
+231
+347
+
+CPP code:
+Method 1:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,octal_num=0,base=1;
+    cin>>n;
+    while(n>0)
+    {
+        int rem=n%8;
+        octal_num+=rem*base;
+        n=n/8;
+        base=base*10;
+    }
+    cout<<octal_num;
+}
+Output:
+231
+347
+
