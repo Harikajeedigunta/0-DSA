@@ -1,0 +1,21 @@
+Python code:
+Method 1: By using int() function
+n1=input()
+converted_str=int(n1,16)
+print(str(converted_str))
+Output:
+C9
+201
+
+Method 2: by using ast.literal_eval() method
+The user can use the literal evaluation function for converting hexadecimal string to decimal string. The literal evaluation function can predict the base and convert the number string into the decimal string.
+
+from ast import literal_eval
+n1=input()
+converted_str=literal_eval(n1)
+print(str(converted_str))
+Output:
+0xB
+11
+
+
