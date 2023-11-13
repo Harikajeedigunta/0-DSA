@@ -1,0 +1,39 @@
+Python code:
+def quadrant(x,y):
+    if(x>0 and y>0):
+        print("1st quadrant")
+    elif(x<0 and y>0):
+        print("2nd quadrant")
+    elif(x<0 and y<0):
+        print("3rd quadrant")
+    elif(x>0 and y<0):
+        print("4th quadrant")
+x,y=map(int,input().split())
+quadrant(x,y)
+Output:
+-2 3
+2nd quadrant
+
+CPP  code:
+#include<iostream>
+using namespace std;
+int getQuadrant(int x,int y)
+{
+    if(x>0 and y>0)
+    cout<<"1st quadrant";
+    else if(x<0 and y>0)
+    cout<<"2nd quadrant";
+    else if(x<0 and y<0)
+    cout<<"3rd quadrant";
+    else if(x>0 and y<0)
+    cout<<"4th quadrant";
+}
+int main()
+{
+    int x,y;
+    cin>>x>>y;
+    getQuadrant(x,y);
+}
+Output:
+-2 -4
+3rd quadrant
