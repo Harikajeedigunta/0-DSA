@@ -1,0 +1,74 @@
+Python Code:
+Method 1:
+def factorial(n):
+    res=1
+    for i in range(2,n+1):
+        res*=i
+    return res
+n=int(input())
+r=int(input())
+p=factorial(n)//factorial(n-r)
+print(p)
+Output:
+10
+6
+151200
+
+Method 2:
+import math
+n=int(input())
+r=int(input())
+p=math.factorial(n)//math.factorial(n-r)
+print(p)
+Output:
+10
+6
+
+Cpp code:
+Method 1:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,r,fact1,fact2,number;
+    cin>>n>>r;
+    fact1=n;
+    for(int i=n-1;i>=1;i--)
+    {
+        fact1=fact1*i;
+    }
+    number=abs(n-r);
+    fact2=number;
+    for(int i=number-1;i>=1;i--)
+    {
+        fact2=fact2*i;
+    }
+    int p=fact1/fact2;
+    cout<<p;
+}
+Output:
+8 5
+6720
+
+Method 2:
+#include<iostream>
+using namespace std;
+int factorial(int n)
+{
+    int fact=1;
+    for(int i=n;i>=1;i--)
+    {
+        fact*=i;
+    }
+    return fact;
+}
+int main()
+{
+    int n,r;
+    cin>>n>>r;
+    int p=factorial(n)/factorial(n-r);
+    cout<<p;
+}
+Output:
+5 2
+20
