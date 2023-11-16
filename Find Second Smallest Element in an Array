@@ -1,0 +1,131 @@
+Python code:
+Method 1 : Using two loops
+import math
+l=list(map(int,input().split()))
+first=math.inf
+second=math.inf
+for i in range(0,len(l)):
+    if(l[i]<first):
+        first=l[i]
+for i in range(0,len(l)):
+    if(l[i]!=first and l[i]<second):
+        second=l[i]
+print(second)
+Output:
+10 13 17 11 34 21
+11
+
+Method 2 : Using one loop
+import math
+a=list(map(int,input().split()))
+first=second=math.inf
+for i in range(0,len(a)):
+    if(a[i]<first):
+        first=a[i]
+    elif(a[i]!=first and a[i]<second):
+        second=a[i]
+print(second)
+Output:
+10 13 17 11 34 21
+11
+
+Method 3 : Using sort() function.
+a=list(map(int,input().split()))
+a.sort()
+second_smallest=a[1]
+print(second_smallest)
+Output:
+10 13 17 11 34 21
+11
+
+CPP Code:
+Method 1:
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int n;
+   cin>>n;
+   int arr[]={70, 40, 30, 20, 10, 90};
+   int smallest_num=arr[0];
+   for(int i=0;i<n;i++)
+   {
+       if(arr[i]<smallest_num)
+       smallest_num=arr[i];
+   }
+   int second_smallest=INT_MAX;
+   for(int i=0;i<n;i++)
+   {
+       if(arr[i]!=smallest_num and arr[i]<second_smallest)
+       second_smallest=arr[i];
+   }
+   cout<<second_smallest;
+}
+Output:
+6
+20
+
+Method 2:
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int n;
+   cin>>n;
+   int arr[n];
+   int smallest_num=INT_MAX;
+   int second_smallest=INT_MAX;
+   for(int i=0;i<n;i++)
+   {
+       cin>>arr[i];
+       if(arr[i]<smallest_num)
+       smallest_num=arr[i];
+       else if(arr[i]!=smallest_num and arr[i]<second_smallest)
+       second_smallest=arr[i];
+       
+   }
+   cout<<second_smallest;
+}
+Output:
+5
+120 10 20 40 30
+20
+
+Method 3:
+#include<bits/stdc++.h>
+using namespace std;
+
+int secSmallest(int arr[], int n)
+{
+   // assigning first element as smallest temporarily
+   int smallest = arr[0];
+
+   // we find the smallest element here
+   for (int i=0; i < n; i++){
+     if(arr[i] < smallest)
+       smallest = arr[i];
+   }
+
+   // temporarily assinging largest max value
+   int sec_smallest = INT_MAX;
+
+   // finding second smallest here
+   for (int i=0; i < n; i++){
+      if(arr[i] != smallest && arr[i] < sec_smallest)
+        sec_smallest = arr[i];
+   }
+
+   return sec_smallest;
+
+}
+int main()
+{
+    int arr[] = {70, 40, 30, 20, 10, 90};
+
+    int n = sizeof(arr)/sizeof(arr[0]); 
+
+    cout<<secSmallest(arr, n);
+}
+Output:
+20
+
