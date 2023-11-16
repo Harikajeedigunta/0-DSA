@@ -1,0 +1,153 @@
+Python code:
+Method 1 : Using Iteration
+arr=list(map(int,input().split()))
+max_element=arr[0]
+for i in range(len(arr)):
+    if(arr[i]>max_element):
+        max_element=arr[i]
+print(max_element)
+Output:
+12 3 2 8 1
+12
+
+Method 2 : Using sort() function.
+arr=list(map(int,input().split()))
+arr.sort()
+print(arr[-1])
+Output:
+10 2 1 20 15
+20
+
+Method 3 : Using max() function
+arr=list(map(int,input().split()))
+max_element=max(arr)
+print(max_element)
+Output:
+25 15 65 75 55
+75
+
+Method 4:
+def max_element(arr):
+    max_element=arr[0]
+    for i in range(len(arr)):
+        if(arr[i]>max_element):
+            max_element=arr[i]
+    return max_element
+arr=list(map(int,input().split()))
+print(max_element(arr))
+Output:
+100 255 29 13 500 120
+500
+
+CPP code:
+Method 1:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    int max_element=arr[0];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+        if(arr[i]>max_element)
+        max_element=arr[i];
+    }
+    cout<<max_element;
+}
+Output:
+5
+25 15 65 75 55
+75
+
+Method 2:
+#include<iostream>
+#include<climits>
+using namespace std;
+int getMax(int num[],int n)
+{
+    int max = INT_MIN;
+    for(int i=0;i<n;i++)
+    {
+        if(num[i]>max)
+        {
+            max=num[i];
+        }
+    }
+    return max;
+}
+int getMin(int num[],int n)
+{
+    int min=INT_MAX;
+    for(int i=0;i<n;i++)
+    {
+        if(num[i]<min)
+        {
+            min=num[i];
+        }
+    }
+    return min;
+}
+int main()
+{
+    int n1;
+    cin>>n1;
+    int num[n1];
+    for(int i=0;i<n1;i++)
+    {
+        cin>>num[i];
+    }
+    cout<<"max_value is:"<<getMax(num,n1)<<endl;;
+    cout<<"min_value is:"<<getMin(num,n1)<<endl;;
+}
+Output:
+5
+10 3 4 7 1
+max_value is:10
+min_value is:1
+
+Method 3:
+#include<iostream>
+#include<climits>
+using namespace std;
+int getMax(int num[],int n)
+{
+    int maxi = INT_MIN;
+    for(int i=0;i<n;i++)
+    {
+        maxi=max(maxi,num[i]);
+    }
+    return maxi;
+}
+int getMin(int num[],int n)
+{
+    int mini=INT_MAX;
+    for(int i=0;i<n;i++)
+    {
+        mini=min(mini,num[i]);
+    }
+    return mini;
+}
+int main()
+{
+    int n1;
+    cin>>n1;
+    int num[n1];
+    for(int i=0;i<n1;i++)
+    {
+        cin>>num[i];
+    }
+    cout<<"max_value is:"<<getMax(num,n1)<<endl;;
+    cout<<"min_value is:"<<getMin(num,n1)<<endl;;
+}
+Output:
+5
+20 15 12 3 1
+max_value is:20
+min_value is:1
+
+
+
+
