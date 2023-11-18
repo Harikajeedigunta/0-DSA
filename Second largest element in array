@@ -1,0 +1,52 @@
+Python code:
+Method 1:
+a=list(map(int,input().split()))
+largest_num=a[0]
+second_largest=a[0]
+for i in range(len(a)):
+    if(a[i]>largest_num):
+        largest_num=a[i]
+    elif(a[i]!=largest_num and a[i]>second_largest):
+        second_largest=a[i]
+print(second_largest)
+Output:
+10 2 1 20 15
+15
+
+Method 2:
+a=list(map(int,input().split()))
+a.sort()
+print(a[-2])
+Output:
+10 3 5 6 7
+7
+
+CPP Code:
+Method 1:
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+   int n;
+   cin>>n;
+   int arr[n];
+   int max_num=arr[0];
+   int second_max=arr[0];
+   for(int i=0;i<n;i++)
+   {
+       cin>>arr[i];
+       if(arr[i]>max_num)
+       {
+           max_num=arr[i];
+       }
+       if(arr[i]!=max_num and arr[i]>second_max)
+       {
+           second_max=arr[i];
+       }
+   }
+   cout<<second_max;
+}
+Output:
+5
+10 2 1 20 15
+15
