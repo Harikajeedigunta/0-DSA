@@ -1,0 +1,87 @@
+Python Code:
+Method 1:
+def reverseList(a):
+    left=0
+    right=len(a)-1
+    while(left<right):
+        a[left],a[right]=a[right],a[left]
+        left+=1
+        right-=1
+    return a
+a=list(map(int,input().split()))
+print(reverseList(a)) 
+Output:
+20 30 50 60 70
+[70, 60, 50, 30, 20]
+
+Method 2:Using swapping
+def reverseList(a):
+    new_lst=a[::-1]
+    return new_lst
+a=list(map(int,input().split()))
+print(reverseList(a))
+Output:
+20 30 50 60 70
+[70, 60, 50, 30, 20]
+
+Method 3:Using in-built function
+l=list(map(int,input().split()))
+l.reverse()
+print(l)
+Output:
+10 11 12 13 14 15
+[15, 14, 13, 12, 11, 10]
+
+Method 4:Using insert method
+a=list(map(int,input().split()))
+l=[]
+for i in a:
+    l.insert(0,i)#reversing the list
+print(l)
+Output:
+10 20 30 40 50
+[50, 40, 30, 20, 10]
+
+Cpp Code:
+Method 1:Printing array in reverse order.
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[]={10, 20, 30, 40, 50};
+    for(int i=n-1;i>=0;i--)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
+Output:
+5
+50 40 30 20 10 
+
+Method 2:
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+       cin>>arr[i];
+    }
+    reverse(arr,arr+n);
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
+Output:
+5
+10 20 30 40 50
+50 40 30 20 10 
+
+
+
