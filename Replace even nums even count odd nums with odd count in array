@@ -1,0 +1,119 @@
+Python code:
+Method 1:
+l=list(map(int,input().split()))
+even_count=0
+odd_count=0
+for i in range(len(l)):
+    if(l[i]%2==0):
+        even_count+=1
+    else:
+        odd_count+=1
+for i in range(len(l)):
+    if(l[i]%2==0):
+        l[i]=even_count
+    else:
+        l[i]=odd_count
+print(l)
+Output:
+23 26 46 11 98 76 34 89
+[3, 5, 5, 3, 5, 5, 5, 3]
+
+Method 2:
+def getReplace(arr,n):
+    even_count=0
+    odd_count=0
+    for i in range(len(arr)):
+        if(arr[i]%2==0):
+            even_count+=1
+        else:
+            odd_count+=1
+    for i in range(len(arr)):
+        if(arr[i]%2==0):
+            arr[i]=even_count
+        else:
+            arr[i]=odd_count
+    return arr
+arr=list(map(int,input().split()))
+n=len(arr)
+print(getReplace(arr,n))
+Output:
+23 26 46 11 98 76 34 89
+[3, 5, 5, 3, 5, 5, 5, 3]
+
+CPP Code:
+Method 1:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    int even_count=0,odd_count=0;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+        if(arr[i]%2==0)
+        even_count+=1;
+        else
+        odd_count+=1;
+    }
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]%2==0)
+        arr[i]=even_count;
+        else
+        arr[i]=odd_count;
+    }
+  for(int i=0;i<n;i++)
+  {
+      cout<<arr[i]<<" ";
+  }
+}
+Output:
+8
+23 26 46 11 98 76 34 89
+3 5 5 3 5 5 5 3 
+
+Method 2:
+#include<bits/stdc++.h>
+using namespace std;
+int getReplace(int arr[],int n)
+{
+    int even_count=0,odd_count=0;
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]%2==0)
+        even_count+=1;
+        else
+        odd_count+=1;
+    }
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]%2==0)
+        arr[i]=even_count;
+        else
+        arr[i]=odd_count;
+    }
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+
+}
+int main()
+{
+    int n1;
+    cin>>n1;
+    int arr[n1];
+    for(int i=0;i<n1;i++)
+    {
+        cin>>arr[i];
+    }
+   getReplace(arr,n1);
+}
+Output:
+8
+23 26 46 11 98 76 34 89
+3 5 5 3 5 5 5 3 
+
