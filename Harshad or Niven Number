@@ -1,0 +1,141 @@
+Python code:
+Method 1:Brute force
+n=int(input())
+temp=n
+sum=0
+while(n>0):
+    rem=n%10
+    sum+=rem
+    n=n//10
+if(temp%sum==0):
+    print("Harshad Number")
+else:
+    print("Not Harshad Number")
+Output:
+18
+Harshad Number
+
+Method 2:Using String
+n=int(input())
+s=str(n)
+l=len(s)
+sum=0
+for i in s:
+    sum+=int(i)
+if(n%sum==0):
+    print("Harshad Number")
+else:
+    print("Not Harshad Number")
+Output:
+12
+Harshad Number
+
+Method 3:
+def HarshadNumber(n):
+    sum=0
+    temp=n
+    while(n!=0):
+        rem=n%10
+        sum+=rem
+        n=n//10
+    if(temp%sum==0):
+        print("Harshad_Number")
+    else:
+        print("Not Harshad_Number")
+n=int(input())
+HarshadNumber(n)
+Output:
+20
+Harshad_Number
+
+Method 4:
+def HarshadNum(n):
+    s=str(n)
+    l=len(s)
+    temp=n
+    sum=0
+    for i in s:
+        sum+=int(i)
+    if(temp%sum==0):
+        print("Harshad Number")
+    else:
+        print("Not Harshad Number")
+n=int(input())
+HarshadNum(n)
+Output:
+45
+Harshad Number
+
+CPP Code:
+Method 1:Brute force
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,sum=0,temp;
+    cin>>n;
+    temp=n;
+    while(n!=0)
+    {
+        int rem=n%10;
+        sum+=rem;
+        n=n/10;
+    }
+    if(temp%sum==0)
+    cout<<"Harshad Number";
+    else
+    cout<<"Not Harshad Number";
+}
+Output:
+19
+Not Harshad Number
+
+Method 2:
+#include<iostream>
+using namespace std;
+int getHarshadNum(int n)
+{
+    int temp,sum=0;
+    temp=n;
+    while(n!=0)
+    {
+        int r=n%10;
+        sum+=r;
+        n=n/10;
+    }
+    if(temp%sum==0)
+    cout<<"Harshad_Num";
+    else
+    cout<<"Not_Harshad_Num";
+}
+int main()
+{
+    int n;
+    cin>>n;
+    getHarshadNum(n);
+}
+Output:
+54
+Harshad_Num
+
+Method 3:Using string
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n,sum=0;
+    cin>>n;
+    string s=to_string(n);
+    int length=s.length();
+    for(char i:s) // Traversing through the string
+    {
+        sum+=(i-'0');
+    }
+    if(n%sum==0)
+    cout<<"Harshad_Num";
+    else
+    cout<<"Not Harshad Num";
+}
+Output:
+54
+Harshad_Num
