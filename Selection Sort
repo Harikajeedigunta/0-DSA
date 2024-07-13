@@ -1,0 +1,40 @@
+Selection Sort:
+Selection sort is a simple and efficient sorting algorithm that works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and moving it to the sorted portion of the list. 
+
+CPP Code:
+#include<iostream>
+#include<utility>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    for(int i=0;i<n;i++)
+    {
+        int min_index=i;
+        for(int j=i+1;j<n;j++)
+        {
+            if(arr[j]<arr[min_index])
+            min_index=j;
+        }
+        if(min_index!=i)
+        swap(arr[min_index],arr[i]);
+        cout<<arr[i]<<" ";
+    }
+}
+Input:
+5
+2 4 1 8 6
+Output:
+1 2 4 6 8 
+
+Summary of Loop Roles
+Outer Loop (i loop): Iterates through each element of the array, assuming each position i is the start of the unsorted portion of the array.
+Inner Loop (j loop): Searches through the remaining unsorted portion of the array (from i+1 to n-1) to find the smallest element. If a smaller element is found, it updates min_index.
+Swap Operation: After the inner loop completes, the smallest element found is swapped with the element at position i.
+This ensures that after each pass of the outer loop, the element at position i is in its correct position in the sorted array.
