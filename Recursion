@@ -1,0 +1,159 @@
+Recursion:
+A Function calling itself again and again directly or indirectly is called Recursion, and the function which it calls is called a recursive function, it is used in divide and conquer algorithms/techniques.
+
+Example code:
+#include<iostream>
+using namespace std;
+class Recursion
+{
+    public:
+    void printNumb(int n)
+    {
+        if(n==0)
+        {
+            return;
+        }
+        cout<<n<<" ";
+        printNumb(n-1);
+    }
+};
+int main()
+{
+    Recursion recursion;
+    int n=5;
+    recursion.printNumb(n);
+}
+Output:
+5 4 3 2 1 
+
+Here's what happens step by step with the stack:
+
+Initial Call (Main Function)
+The main function starts executing and an instance of Recursion named recursion is created.
+The variable n is set to 5.
+recursion.printNumb(n) is called with n = 5.
+
+First Call to printNumb(5)
+A stack frame for printNumb(5) is created.
+if(n == 0) is checked, which is false since n = 5.
+cout << 5 << " " is executed, printing 5 .
+printNumb(4) is called.
+The stack now contains: printNumb(5) waiting for printNumb(4) to complete.
+
+Second Call to printNumb(4)
+A stack frame for printNumb(4) is created.
+if(n == 0) is checked, which is false since n = 4.
+cout << 4 << " " is executed, printing 4 .
+printNumb(3) is called.
+The stack now contains: printNumb(5), printNumb(4).
+
+Third Call to printNumb(3)
+A stack frame for printNumb(3) is created.
+if(n == 0) is checked, which is false since n = 3.
+cout << 3 << " " is executed, printing 3 .
+printNumb(2) is called.
+The stack now contains: printNumb(5), printNumb(4), printNumb(3).
+
+Fourth Call to printNumb(2)
+A stack frame for printNumb(2) is created.
+if(n == 0) is checked, which is false since n = 2.
+cout << 2 << " " is executed, printing 2 .
+printNumb(1) is called.
+The stack now contains: printNumb(5), printNumb(4), printNumb(3), printNumb(2).
+
+Fifth Call to printNumb(1)
+A stack frame for printNumb(1) is created.
+if(n == 0) is checked, which is false since n = 1.
+cout << 1 << " " is executed, printing 1 .
+printNumb(0) is called.
+The stack now contains: printNumb(5), printNumb(4), printNumb(3), printNumb(2), printNumb(1).
+
+Sixth Call to printNumb(0)
+A stack frame for printNumb(0) is created.
+if(n == 0) is checked, which is true this time.
+return is executed, and this call ends immediately.
+The stack frame for printNumb(0) is popped off the stack.
+Now, the function starts returning back through the recursive calls:
+
+Returning from printNumb(1)
+printNumb(1) finishes execution and its stack frame is popped off the stack.
+The stack now contains: printNumb(5), printNumb(4), printNumb(3), printNumb(2).
+
+Returning from printNumb(2)
+printNumb(2) finishes execution and its stack frame is popped off the stack.
+The stack now contains: printNumb(5), printNumb(4), printNumb(3).
+
+Returning from printNumb(3)
+printNumb(3) finishes execution and its stack frame is popped off the stack.
+The stack now contains: printNumb(5), printNumb(4).
+
+Returning from printNumb(4)
+printNumb(4) finishes execution and its stack frame is popped off the stack.
+The stack now contains: printNumb(5).
+
+Returning from printNumb(5)
+printNumb(5) finishes execution and its stack frame is popped off the stack.
+The stack is now empty.
+Finally, the main function completes and returns 0.
+
+Throughout this process, the stack helps manage the flow of execution by keeping track of each call and its state until it can be resolved and popped off the stack. This is the core mechanism that allows recursion to work.
+
+What happens when a recursive call is made:
+When the recursive calls are made these calls will be added into a STACK, and will get deleted from the stack once the function starts returning.
+
+Base Case:
+A very important point to note in recursion is the base case or stopping condition of recursive calls, if we don’t give a base case then as you saw in the above example so many recursive calls will be made, memory gets wasted and we will not get desired output. So the base condition is very crucial for recursive code.
+
+Stack Overflow!
+Think what happens when there is no base case?
+
+Without a base case in recursion, the stack will get filled excessively with recursive calls, once the stack memory exceeds the space allocated by JVM then it will lead to a stack overflow error.
+
+Stack overflow error is a runtime error.
+
+There are two types of recursion direct and indirect:
+
+Direct recursion: Function calling the same function. A function func calls the same function func then it is referred as Direct recursion:
+ //Example of direct recursion
+int direct_Func()
+{
+    //code….
+                       ......
+      
+  direct_Func();
+          
+}
+
+Indirect recursion: Functions calling another functions again and again. A function func1 is called indirect recursion if this func1 calls a new function func2.
+//Example of Indirect recursion
+int indirect_func1()
+{
+	...
+	...
+	int indirect_func2();
+
+}
+int indirect_func2()
+{
+	...
+	...
+	int indirect_func1();
+
+}
+
+Advantages of recursion:
+Code will be short and clean as we just need to define the base case and the recursive case.
+To solve such problems which are naturally recursive such as the tower of Hanoi.
+
+Disadvantages of recursion:
+Recursive functions are slower than iterative programs.
+More complex to analyze the code.
+Not efficient in terms of space, as the stack is required.
+Not efficient in terms of time complexity too.
+
+
+
+
+
+
+
